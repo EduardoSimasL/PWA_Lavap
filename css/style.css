@@ -1,0 +1,36 @@
+body {
+    background-color: #f8f9fa;
+}
+
+#task-list .completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Cor de fundo da splash screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.splash-content {
+    text-align: center;
+}
+
+.splash-logo {
+    width: 100px;
+    height: 100px;
+}
+
+.splash-title {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #0d6efd; /* Cor do texto do título */
+}
