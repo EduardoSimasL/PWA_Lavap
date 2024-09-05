@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/agendamento.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Agendamento</title>
+</head>
+<body>
+   
+    <div class="container">
+
+        <div class="topo">
+            <a href="./agenda.html">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="pai">
+            <div class="usuario">
+                <h2>Usuário</h2>
+            </div>
+
+            <div class="saldo">
+                    <h2 class="s">Saldo: R$ 00,00</h2>
+            </div>
+        </div>
+
+        <div class="risco"></div>
+
+        <h5>Agendamentos</h5>
+
+        <div class="pai2">
+            <div class="filho2">
+                <a href="javascript:;" onclick="abrir('popup-filho2-1')">Cancelar agendamento?</a>
+                <div id="popup-filho2-1" class="popup">
+                    <div class="pai-botoes">
+                        <div class="botao1">Sim</div>
+                        <div class="botao2">
+                            <a href="javascript:;" onclick="fechar('popup-filho2-1')">Não</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filho3"></div>
+        </div>
+
+        <div class="pai2">
+            <div class="filho2">
+                <a href="javascript:;" onclick="abrir('popup-filho2-2')">Cancelar agendamento?</a>
+                <div id="popup-filho2-2" class="popup">
+                    <div class="pai-botoes">
+                        <div class="botao1">Sim</div>
+                        <div class="botao2">
+                            <a href="javascript:;" onclick="fechar('popup-filho2-2')">Não</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filho3"></div>
+        </div>
+
+        <div class="pai2">
+            <div class="filho2">
+                <a href="javascript:;" onclick="abrir('popup-filho2-3')">Cancelar agendamento?</a>
+                <div id="popup-filho2-3" class="popup">
+                    <div class="pai-botoes">
+                        <div class="botao1">Sim</div>
+                        <div class="botao2">
+                            <a href="javascript:;" onclick="fechar('popup-filho2-3')">Não</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filho3"></div>
+        </div>
+
+        <div class="footer"></div>
+
+    </div>
+
+    <script src="../js/agendamento.js"></script>
+</body>
+</html>
