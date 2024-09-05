@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/maquina.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style type="text/css">
+        #popup{
+            background-color: #a6a6a6;
+            width: 250px;
+            height: 200px;
+            position: absolute;
+            border-radius: 10px;
+            display: flex; 
+            justify-content: space-around; 
+            
+            
+            
+        }
+    </style>
+    <script type="text/javascript">
+        function abrir(id){
+            document.getElementById(id).style.display ="block";    
+        }
+
+        function fechar(id){
+            document.getElementById(id).style.display ="none";    
+        }
+
+    </script>
+    <title>Agendamento</title>
+</head>
+<body>
+   
+    <div class="container">
+
+        <div class="topo">
+            <a href="./agenda.html">
+                <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <i class="fa-solid fa-bars"></i>
+                
+        </div>
+
+        <div class="pai">
+            <div class="usuario">
+                <h2>Usuário</h2>
+            </div>
+            
+            <div class="saldo">
+                <h2 class="s">Saldo: R$ 00,00</h2>
+        </div>
+            <div id="popup">
+                
+                
+                    <a href="javascript: ;" onclick="fechar('popup')">
+                        <div class="botao1">Cancelar</div></a>
+                   
+                        <div class="botao2">Agendar</div>
+                    
+                
+            </div>
+            
+        </div>
+
+        <div class="risco"></div>
+
+        <div class="superpai">
+
+            <div class="superfilho">
+                <a href="javascript: ;" onclick="abrir('popup')"><div class="filhao1"></div></a>
+                <a href="javascript: ;" onclick="abrir('popup')"><div class="filhao2"></div></a>
+
+                <a href="javascript: ;" onclick="abrir('popup')"><div class="filhao1"></div></a>
+                <a href="javascript: ;" onclick="abrir('popup')"><div class="filhao2"></div></a>
+
+                
+                <a href="javascript: ;" onclick="abrir('popup')"><div class="filhao1"></div></a>
+                <a href="javascript: ;" onclick="abrir('popup')"><div class="filhao2"></div></a>
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="footer"></div>
+
+    </div>
+
+</body>
+</html>
