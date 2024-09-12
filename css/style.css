@@ -1,92 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 * {
-  
+  margin: 0;
+  padding: 0;
   list-style: none;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
-body{
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: black;
-}
-
-.container{
-  background-color: white;
-  height: 600px;
-  width: 350px;
-  border-radius: 15px;
-  padding: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-}
-
-.topo{
+body, html {
+  height: 100%;
   width: 100%;
-  height: 50px;
-  background-color: #d9d9d9;
-  border-radius: 15px;
-}
-
-.pai-foto{
-  width: 100%;
-  height: 250px;
-  
-  margin-top: 6px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  background-color: #6EC1E4;
+  overflow: hidden; /* Evitar rolagem em dispositivos móveis */
 }
 
-.filho-foto{
-  margin-top: 50px;
-  border-radius: 100%;
-  width: 165px;
-  height: 165px;
-  background-color: #d9d9d9;
+.container {
+  position: relative;
+  width: 100%; /* Ocupar toda a largura da tela */
+  height: 100vh; /* Ocupar toda a altura da tela */
+  background-color: #8ED1FC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Para garantir que as bolhas não "vazem" */
 }
 
-#login{
-  background-color: #d9d9d9;
-  height: 35px;
-  width: 300px;
-  font-weight: bold;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: black;
+.logo-container {
+  position: relative;
+  width: 60%; /* Logo mais proporcional para mobile */
+  height: auto; /* Manter a proporção da imagem */
 }
 
-#senha{
-  background-color: #d9d9d9;
-  height: 35px;
-  width: 300px;
-  font-weight: bold;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: black;
+.logo {
+  width: 100%;
+  height: auto;
 }
 
-button {
-  
-  
-  background-color: gray;
-  border: none;
-  border-radius: 10px;
-  color: black;;
-  font-size: 16px;
-  cursor: pointer;
+/* Estilos das bolhas animadas */
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Bolhas não interferem na interação */
+}
+
+.bubble {
+  position: absolute;
+  bottom: -150px; /* Inicia fora da tela */
+  background-color: #77E7F8;
+  ;
+  border-radius: 50%;
+  animation: rise 6s infinite ease-in-out;
+  opacity: 0.6;
+}
+
+/* Definir diferentes tamanhos e tempos para as bolhas */
+.bubble:nth-child(1) {
+  width: 60px;
+  height: 60px;
+  left: 10%;
+  animation-duration: 8s;
+}
+
+.bubble:nth-child(2) {
+  width: 40px;
   height: 40px;
-  width: 70px;
+  left: 30%;
+  animation-duration: 6s;
 }
 
-h2 {
-  color:black;
-  font-family: "Lato", sans-serif;
+.bubble:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  animation-duration: 10s;
+}
+
+.bubble:nth-child(4) {
+  width: 50px;
+  height: 50px;
+  left: 70%;
+  animation-duration: 7s;
+}
+
+.bubble:nth-child(5) {
+  width: 30px;
+  height: 30px;
+  left: 90%;
+  animation-duration: 9s;
+}
+
+.bubble:nth-child(6) {
+  width: 45px;
+  height: 45px;
+  left: 15%;
+  animation-duration: 9s;
+}
+
+.bubble:nth-child(7) {
+  width: 35px;
+  height: 35px;
+  left: 35%;
+  animation-duration: 7s;
+}
+
+.bubble:nth-child(8) {
+  width: 70px;
+  height: 70px;
+  left: 55%;
+  animation-duration: 8s;
+}
+
+.bubble:nth-child(9) {
+  width: 55px;
+  height: 55px;
+  left: 80%;
+  animation-duration: 10s;
+}
+
+.bubble:nth-child(10) {
+  width: 65px;
+  height: 65px;
+  left: 65%;
+  animation-duration: 12s;
+}
+
+/* Animação para fazer as bolhas subirem */
+@keyframes rise {
+  0% {
+      transform: translateY(0);
+      opacity: 0;
+  }
+  50% {
+      opacity: 0.7;
+  }
+  100% {
+      transform: translateY(-120vh); /* Sobem para fora da tela */
+      opacity: 0;
+  }
+}
+
+/* Estilo responsivo adicional para telas pequenas */
+@media (max-width: 600px) {
+  .container {
+      width: 100vw;
+      height: 100vh;
+  }
+
+  .logo-container {
+      width: 70%; /* Aumentar a logo em telas menores */
+  }
+
+  .bubble {
+      opacity: 0.5; /* Bolhas um pouco mais discretas em telas pequenas */
+  }
 }
