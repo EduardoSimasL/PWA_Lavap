@@ -1,19 +1,19 @@
 {
-  "name": "PWA Lavap",
-  "short_name": "Lavap",
-  "description": "Simulador de lavagem e agendamento",
-  "start_url": "index.html",
+  "name": "Login App",
+  "short_name": "Login",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
+  "description": "Aplicativo de Login PWA",
   "icons": [
     {
-      "src": "/icons/android/android-launchericon-192-192.png",
+      "src": "icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icons/android/android-launchericon-512-512.png",
+      "src": "icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
