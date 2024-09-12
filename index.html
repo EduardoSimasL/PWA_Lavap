@@ -8,6 +8,21 @@
   <title>Login</title>
 </head>
 <body>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(function(registration) {
+            console.log('Service Worker registrado com sucesso:', registration.scope);
+          })
+          .catch(function(error) {
+            console.log('Falha ao registrar o Service Worker:', error);
+          });
+      });
+    }
+  </script>
+  
   <div class="container">
 
     <div class="topo"></div>
@@ -29,20 +44,10 @@
     </form>
     <br>
     
-    <a href="./cadastro.html">
+    <a href="/cadastro.html">
       <h2>Cadastre-se</h2>
 
   </div>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(function(registration) {
-          console.log('Service Worker registrado com sucesso:', registration);
-        })
-        .catch(function(error) {
-          console.log('Falha ao registrar o Service Worker:', error);
-        });
-    }
-  </script>
+  
 </body>
 </html>
