@@ -1,74 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    
-}
-
 body, html {
     height: 100%;
     width: 100%;
+    background-color: #fffdfd;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fffdfd;
-    overflow: hidden; /* Evitar rolagem em dispositivos móveis */
+    overflow: hidden; /* Evitar rolagem desnecessária */
 }
 
 .container {
     position: relative;
-    width: 100%; /* Ocupar toda a largura da tela */
-    height: 100vh; /* Ocupar toda a altura da tela */
+    width: 100%; 
+    height: 100vh; 
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    
+    justify-content: flex-start; /* Garantir que o conteúdo comece do topo */
+    align-items: center;
+    padding: 20px 10px; /* Adicionando padding para espaçamento nas laterais */
+    overflow-y: auto; /* Permitindo rolagem caso o conteúdo ultrapasse a altura */
 }
 
 .topo {
     width: 100%;
     height: 150px;
     background-color: white;
-    position: absolute;
-    top: 0; 
-    left: 0;
     box-shadow: 0 4px rgba(0, 0, 0, .1);
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    padding: 15px; /* Espaçamento interno */
 }
 
 .title {
-    position: absolute;
-    top: 40%; 
-    left: 0;
-    margin-left: 25px; 
     font-family: "Poppins", sans-serif;
     color: #392AAB;
     font-weight: bold;
-    font-size: 25px ;
-    display: flex;
-    flex-direction: column;
+    font-size: 22px;
 }
 
 .balance {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 8px 16px;
-    border-radius: 20px;
-    color: #007bff;
-    font-size: 16px;
-    margin-left: 250px;
-
 }
 
 .balance-icon {
@@ -78,127 +55,100 @@ body, html {
 }
 
 span {
-    background-color: #41a3fe ;
-    border: none;
+    background-color: #41a3fe;
     border-radius: 10px;
     color: white;
-    cursor: pointer;
-    height: 30px;
-    width: 70px;
-    padding: 5px;
+    padding: 5px 15px;
+    font-size: 16px;
 }
 
 h6 {
- color: grey;
+    color: grey;
+    font-size: 14px;
 }
 
-img{
+img {
     border-radius: 50%;
 }
 
-.title {
-    top: 25%;
-    color: #E87A30;
-    font-size: 25px;
-}
-
 .box {
-    width: 350px;
-    padding: 10px;
+    width: 100%; 
+    max-width: 350px; /* Limitar a largura máxima */
+    padding: 15px;
     border: 2px solid #E0E0E0;
-    border-radius: 50px;
-    background-color: #F5F5F5;
-    margin-top: 120px;
+    border-radius: 20px;
     
-}   
+    margin-top: 20px;
+}
 
 .lavagem {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: white; 
+    border-radius: 20px;
     
-    white-space: nowrap; /* Garante que o texto não quebre */
-}
-
-.lavagem:last-child {
-    border-bottom: none;
+    color: white; /* Texto branco */
 }
 
 .nome-lavagem {
     font-weight: bold;
-    color: #333;
-    background-color: #F5F5F5;
+    color: black; 
     font-family: "Poppins", sans-serif;
-    font-size: 20px;
+    font-size: 18px;
+    background-color: transparent; 
+    padding: 0; 
+    font-family: "Poppins", sans-serif;
 }
 
 .tempo-lavagem {
     background-color: #00AFFF;
     color: white;
-    padding: 5px 25px;
+    padding: 5px 20px;
     border-radius: 15px;
-    font-size: 12px;
-    white-space: nowrap; /* Garante que o texto não quebre */
-    cursor: pointer;
-    height: 25px;
-    width: 80px;
-    font-weight: bold;
-    margin-top: 10px;
-    
+    font-size: 14px;
+    border: none; /* Remover qualquer borda */
 }
+
 
 .sub-title {
-    font-size: 20px;
+    font-size: 25px;
     color: #E87A30;
     font-family: "Poppins", sans-serif;
-    font-size: 25px;
-    align-self: flex-start; 
-    margin-left: 25px;
-    margin-top: 20px;
+    align-self: flex-start;
+    list-style: none;
 }
 
-.box-agenda{
-    width: 350px;
-    padding: 10px;
+a{
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+.box-agenda {
+    width: 100%; 
+    max-width: 350px;
+    padding: 15px;
     border: 2px solid #E0E0E0;
-    border-radius: 50px;
+    border-radius: 20px;
     background-color: #F5F5F5;
-    margin-top: 10px;
-    height: 150px;
+    margin-top: 20px;
     display: flex;
-    flex-direction: column; 
-    justify-content: center; 
+    flex-direction: column;
     align-items: center;
+    font-family: "Poppins", sans-serif;
 }
 
-.agenda-lavadora {
-    background-color: #392AAB;
+.agenda-lavadora, .agenda-secadora {
+    background-color: #392AAB; /* Mesma cor dos agendamentos */
     color: white;
-    padding: 8px 50px;
-    border-radius: 10px;
-    font-size: 12px;
-    white-space: nowrap; /* Garante que o texto não quebre */
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
     cursor: pointer;
-    height: 40px;
-    width: 250px;
-    font-weight: bold;
-    margin-top: 10px;
-    font-size: 20px;
-}
-
-.agenda-secadora {
-    background-color: #392AAB;
-    color: white;
-    padding: 8px 50px;
-    border-radius: 10px;
-    font-size: 12px;
-    white-space: nowrap; /* Garante que o texto não quebre */
-    cursor: pointer;
-    height: 40px;
-    width: 250px;
-    font-weight: bold;
-    margin-top: 10px;
-    font-size: 20px;
+    border: 2px solid #E0E0E0;
 }
