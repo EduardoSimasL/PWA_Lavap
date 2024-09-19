@@ -15,7 +15,6 @@
                 <a href="./home.html"><i class="fa-solid fa-arrow-left"></i></a>
             </div>
             <div class="title">
-                 
                 Agenda
             </div>
             <div class="balance">
@@ -25,17 +24,29 @@
 
         <div class="calendario"></div>
 
-        <h3>Horários disponivéis</h3>
+        <h3>Horários disponíveis</h3>
 
         <div class="horario-container">
-            <div class="horario">08:00</div>
-            <div class="horario">09:00</div>
-            <div class="horario">10:00</div>
-            <div class="horario">11:00</div>
-            <div class="horario">12:00</div>
+            <div class="horario" data-horario="08:00">08:00</div>
+            <div class="horario" data-horario="09:00">09:00</div>
+            <div class="horario" data-horario="10:00">10:00</div>
+            <div class="horario" data-horario="11:00">11:00</div>
         </div>
 
     </div>
+
     
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-text">Deseja agendar?</p>
+            <div class="modal-buttons">
+                <button class="btn cancelar">Cancelar</button>
+                <button class="btn agendar">Agendar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
 </body>
 </html>
