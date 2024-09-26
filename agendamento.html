@@ -25,15 +25,39 @@
 
         <div class="box-container">
             <div class="item">
-                <span>07/09 - 12:30</span>
-                <i class="fa-regular fa-trash-can"></i>
+                <span>03/09 - 09:30</span>
+                <i class="fa-regular fa-trash-can"onclick="showPopup()"></i>
+              </div>
+              <div class="item">
+                <span>05/09 - 15:00</span>
+                <i class="fa-regular fa-trash-can"onclick="showPopup()"></i>
               </div>
               <div class="item">
                 <span>07/09 - 12:30</span>
-                <i class="fa-regular fa-trash-can"></i>
+                <i class="fa-regular fa-trash-can"onclick="showPopup()"></i>
+              </div>
+              <div class="item">
+                <span>12/09 - 17:00</span>
+                <i class="fa-regular fa-trash-can"onclick="showPopup()"></i>
+              </div>
+              <div class="item">
+                <span>15/09 - 19:30</span>
+                <i class="fa-regular fa-trash-can"onclick="showPopup()"></i>
               </div>
         </div>
 
+        <div id="popup" class="popup-container" style="display:none;">
+            <div class="popup-content">
+                <p>Deseja cancelar o agendamento?</p>
+                <p><strong>07/09 12:30</strong></p>
+                <div class="popup-buttons">
+                    <button id="nao" class="btn-azul">Não</button>
+                    <button id="sim" class="btn-roxo">Sim</button>
+                </div>
+            </div>
+        </div> 
+
     </div>
+    <script src="./js/agendamento.js"></script>
 </body>
 </html>

@@ -21,13 +21,15 @@ body, html {
 
 .container {
     position: relative;
-    width: 100%; /* Ocupar toda a largura da tela */
-    height: 100vh; /* Ocupar toda a altura da tela */
+    width: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start; 
+    align-items: center; 
     flex-direction: column;
-    row-gap: 60px;
+    row-gap: 20px;
+    padding-top: 200px;
+    padding-bottom: 20px; 
 }
 
 .topo {
@@ -94,79 +96,90 @@ a{
     color: black;
 }
 
-.box-container {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
+.calendario {
+    width: 80%; 
+    height: 250px;
+    background-image: url('https://michelzbinden.com/pt/2024/calendario-setembro-2024-46sd.webp');
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    margin: 0 auto; 
+}
+
+.horario-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    width: 100%;
+    max-width: 300px; 
+    margin: 0 auto; 
+}
+
+.horario {
+    background-color: #3A0CA3;
+    color: white;
+    padding: 10px 15px;
     border-radius: 15px;
-    
-}
-
-.item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    font-family: "Poppins", sans-serif; 
+    text-align: left;
     font-weight: bold;
-    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
 }
 
-i {
-    font-size: 20px;
-    font-weight: bold;
-}
 
-.item:last-child {
-    border-bottom: none; /* Remove a linha inferior do último item */
-}
-
-.popup-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.modal {
+    display: none; 
     position: fixed;
-    top: 0;
+    z-index: 1;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4); 
+    justify-content: center;
+    align-items: center;
     font-family: "Poppins", sans-serif;
 }
 
-.popup-content {
+.modal-content {
     background-color: white;
-    padding: 20px;
     border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
 }
 
-.popup-buttons {
+.modal-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    
 }
 
-button {
-    padding: 10px 40px;
+.modal-buttons .btn {
+    padding: 10px 20px;
+    border-radius: 10px;
     border: none;
-    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-.btn-azul {
-    background-color: #4da8f0;
+.cancelar {
+    background-color: #1E90FF;
     color: white;
 }
 
-.btn-roxo {
-    background-color: #4a36f0;
+.agendar {
+    background-color: #3A0CA3;
     color: white;
 }
 
-button:hover {
-    opacity: 0.8;
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
 }
