@@ -11,6 +11,6 @@ Para avaliar o projeto em PWA e o backend, siga os passos abaixo para configurar
 3.Inicie o Servidor PHP
     php -S localhost:8000
 
-
+Dimension Iphone SE
 
 
