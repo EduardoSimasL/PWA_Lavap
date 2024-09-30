@@ -1,6 +1,6 @@
 <?php
 // Configuração da conexão SQLite
-$pdo = new PDO('sqlite:users.db');
+$pdo = new PDO('sqlite:lavapp.db');
 
 // Função para cadastrar um novo usuário
 function registerUser($username, $password) {
@@ -28,10 +28,18 @@ function registerUser($username, $password) {
 
 // Processa a solicitação de cadastro
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $data = json_decode(file_get_contents("php://input"), true);
-    $username = $data['username'];
-    $password = $data['password'];
+    // Pega os dados do formulário via POST
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
+    // Chama a função de cadastro
     $response = registerUser($username, $password);
-    echo json_encode($response);
+
+    // Exibe a mensagem de retorno
+    if ($response['status'] == 'success') {
+        echo "<script>alert('Usuário cadastrado com sucesso!');</script>";
+    } else {
+        echo "<script>alert('Erro: " . $response['message'] . "');</script>";
+    }
 }
+?>
