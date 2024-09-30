@@ -32,7 +32,7 @@ function checkAvailability($date, $time) {
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $date = $_GET['date'];
     $time = $_GET['time'];
-    $machine = $GET['machine_id']
+    $machine = $GET['machine_id'];
 
     $response = checkAvailability($date, $time);
     echo json_encode($response);
