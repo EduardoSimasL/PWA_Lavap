@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/agendamento.css">
+    <title>Agendamentos</title>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="topo">
+            <div class="icon">
+                <a href="./home.html"><i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+            <div class="title">
+                Meus <br>
+                Agendamentos
+            </div>
+            <div class="balance">
+                <img src="./Group 49@2x.png" alt="icon" class="balance-icon">
+            </div>
+        </div>
+
+        <div class="box-container">
+            <div class="item">
+                <span>03/09 - 09:30</span>
+                <i class="fa-regular fa-trash-can"onclick="showPopup()"></i>
+              </div>
+              <div class="item">
+                <span>05/09 - 15:00</span>
+                <i class="fa-regular fa-trash-can"onclick="showPopup()"></i>
+              </div>
+              <div class="item">
+                <span>07/09 - 12:30</span>
+                <i class="fa-regular fa-trash-can"onclick="showPopup()"></i>
+              </div>
+              <div class="item">
+                <span>12/09 - 17:00</span>
+                <i class="fa-regular fa-trash-can"onclick="showPopup()"></i>
+              </div>
+              <div class="item">
+                <span>15/09 - 19:30</span>
+                <i class="fa-regular fa-trash-can"onclick="showPopup()"></i>
+              </div>
+        </div>
+
+        <div id="popup" class="popup-container" style="display:none;">
+            <div class="popup-content">
+                <p>Deseja cancelar o agendamento?</p>
+                <p><strong>07/09 12:30</strong></p>
+                <div class="popup-buttons">
+                    <button id="nao" class="btn-azul">Não</button>
+                    <button id="sim" class="btn-roxo">Sim</button>
+                </div>
+            </div>
+        </div> 
+
+    </div>
+    <script src="./js/agendamento.js"></script>
+</body>
+</html>

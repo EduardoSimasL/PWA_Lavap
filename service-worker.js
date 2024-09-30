@@ -34,28 +34,22 @@ self.addEventListener('activate', function(event) {
   );
 });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', event => {
+  const request = event.request;
+
+  // Verifique se o método é GET antes de tentar fazer o cache
+  if (request.method !== 'GET') {
+      return;
+  }
+
   event.respondWith(
-    caches.match(event.request)
-      .then(function(response) {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request).then(
-          function(response) {
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
-
-            const responseToCache = response.clone();
-            caches.open(CACHE_NAME)
-              .then(function(cache) {
-                cache.put(event.request, responseToCache);
+      caches.open('my-cache').then(cache => {
+          return cache.match(request).then(response => {
+              return response || fetch(request).then(fetchResponse => {
+                  cache.put(request, fetchResponse.clone());
+                  return fetchResponse;
               });
-
-            return response;
-          }
-        );
+          });
       })
   );
 });
