@@ -1,6 +1,6 @@
 <?php
 
-$pdo = new PDO('sqlite:laundry.db');
+$pdo = new PDO('sqlite:lavapp.db');
 
 function checkAvailability($date, $time) {
     global $pdo;

@@ -4,8 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/home.css">
-    
     <title>Home</title>
+    <script>
+        // Função para iniciar o contador
+        function startTimer(duration) {
+            let timer = duration, minutes, seconds;
+            const countdownElements = document.querySelectorAll('.tempo-lavagem');
+
+            const interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                countdownElements.forEach(element => {
+                    element.textContent = `faltam ${minutes}:${seconds} min`;
+                });
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    fetchStatus(); // Chama a função para verificar o status da máquina
+                }
+            }, 1000);
+        }
+
+        // Função para buscar o status da máquina no servidor
+        function fetchStatus() {
+            fetch('./get_machine_status.php') // URL do seu endpoint para buscar status
+                .then(response => response.json())
+                .then(data => {
+                    // Aqui você pode atualizar o DOM com o status retornado
+                    console.log(data); // Verifique o que o servidor retorna
+                    // Atualize a UI conforme o status
+                })
+                .catch(error => console.error('Erro ao buscar o status:', error));
+        }
+
+        // Iniciar o contador assim que a página for carregada
+        window.onload = function () {
+            // Defina a duração total em segundos (por exemplo, 30 minutos)
+            const duration = 30 * 60; // 30 minutos
+            startTimer(duration);
+        };
+    </script>
 </head>
 <body>
     <div class="container">
@@ -27,11 +69,11 @@
         <div class="box">
             <div class="lavagem">
                 <span class="nome-lavagem">Lavagem rapida 1</span>
-                <span class="tempo-lavagem">faltam 30 min</span>
+                <span class="tempo-lavagem">faltam 30:00 min</span>
             </div>
             <div class="lavagem">
-                <span class="nome-lavagem">Lavagem rapida 1</span>
-                <span class="tempo-lavagem">faltam 30 min</span>
+                <span class="nome-lavagem">Lavagem rapida 2</span>
+                <span class="tempo-lavagem">faltam 30:00 min</span>
             </div>
         </div>
 
@@ -40,7 +82,7 @@
         <div class="box">
             <div class="lavagem">
                 <span class="nome-lavagem">Agendado para:</span>
-                <a href="./agendamento.html"><span class="tempo-lavagem">12:30     </span></a>
+                <a href="./agendamento.html"><span class="tempo-lavagem">12:30</span></a>
             </div>
             <div class="lavagem">
                 <span class="nome-lavagem">Agendado para:</span>
@@ -56,6 +98,5 @@
         </div>
 
     </div>
-    
 </body>
 </html>

@@ -27,8 +27,33 @@ document.addEventListener('DOMContentLoaded', function () {
         modal.style.display = 'none';
     });
 
+    
     document.querySelector('.agendar').addEventListener('click', function () {
-        alert('Agendado com sucesso!');
-        modal.style.display = 'none';
+        const horario = document.querySelector('.horario.active').getAttribute('data-horario'); // Assuming you track which horario is selected
+        const machineId = 1;
+        const date = 2;
+    
+        fetch('reserva_maq.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                machine_id: machineId,
+                date: date,
+                time: horario,
+                user_id: 1
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            modal.style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Ocorreu um erro ao tentar agendar.');
+        });
     });
+    
 });
